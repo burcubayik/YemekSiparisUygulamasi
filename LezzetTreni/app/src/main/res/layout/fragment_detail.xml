@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="detailToolbarTitle" type="String" />
+        <variable name="detailFragment" type="com.example.lezzettreni.fragment.DetailFragment" />
+        <variable name="foodObject" type="com.example.lezzettreni.entity.Foods" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.DetailFragment">
+
+        <ImageView
+            android:id="@+id/imageViewDetail"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/izgarakofte"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailFoodName" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{detailToolbarTitle}"/>
+
+        <TextView
+            android:id="@+id/textViewDetailFoodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@{foodObject.foodName}"
+            android:textColor="@color/yaziRenk2"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarDetail" />
+
+        <TextView
+            android:id="@+id/textViewDetailPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/noto_sans"
+            android:text='@{String.valueOf(foodObject.price) + "₺"}'
+            android:textColor="@color/yaziRenk1"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewDetail" />
+
+        <Button
+            android:id="@+id/buttonDetailPlus"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/buttonRenk"
+            app:cornerRadius="40dp"
+            app:icon="@drawable/add_img"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewDetailAmount"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailPrice"
+            android:onClick="@{() -> detailFragment.buttonPlusClick()}"/>
+
+        <TextView
+            android:id="@+id/textViewDetailAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="0"
+            android:textColor="@color/yaziRenk2"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDetailMinus"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonDetailPlus"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailPrice" />
+
+        <Button
+            android:id="@+id/buttonDetailMinus"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/buttonRenk"
+            app:cornerRadius="40dp"
+            app:icon="@drawable/remove_img"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewDetailAmount"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDetailPrice"
+            android:onClick="@{() -> detailFragment.buttonMinusClick()}"/>
+
+        <Button
+            android:id="@+id/buttonDetailAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/buttonRenk"
+            android:text="Sepete Ekle"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDetailPlus"
+            android:onClick="@{() -> detailFragment.buttonAddToCartClick()}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

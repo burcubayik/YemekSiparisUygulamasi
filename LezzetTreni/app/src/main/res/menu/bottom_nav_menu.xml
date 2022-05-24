@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+
+        android:id="@+id/homePageFragment"
+        android:icon="@drawable/home_selector"
+
+        android:title="Anasayfa" />
+    <item
+        android:id="@+id/cartFragment"
+        android:icon="@drawable/cart_selector"
+        android:title="Sepet" />
+    <item
+        android:id="@+id/loginFragment"
+        android:icon="@drawable/account_selector"
+        android:title="Hesap" />
+</menu>

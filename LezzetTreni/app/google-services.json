@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "402532600893",
+    "project_id": "useroperations-73e7a",
+    "storage_bucket": "useroperations-73e7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402532600893:android:0295c755fcbb1b0efc6e54",
+        "android_client_info": {
+          "package_name": "com.example.lezzettreni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402532600893-oq0ktgbviui0it24ee0e0f1uneafo65b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwXnC0oPXXMGemDpsHl67EJjDfZW2uhsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402532600893-oq0ktgbviui0it24ee0e0f1uneafo65b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
